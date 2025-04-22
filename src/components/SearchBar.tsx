@@ -1,18 +1,20 @@
+import { cn } from '@/utils/cn';
 import React from 'react'
 import { IoSearchSharp } from "react-icons/io5";
 
 type Props = {
     className?: string,
     value: string,
-    onChange: React.ChangeEventHandler<HTMLInputElement> | undefined,
-    onSubmit: React.FormEventHandler<HTMLFormElement> | undefined,
+    onChange: React.ChangeEventHandler<HTMLInputElement>,
+    onSubmit: React.FormEventHandler<HTMLFormElement>,
 }
 
 export default function SearchBar(props: Props) {
     return(
         <form 
         onSubmit={props.onSubmit}
-        className='flex relative items-center justify-center h-8'>
+        className={cn("flex relative items-center justify-center h-8", 
+        props.className)}>
             <input 
             type='text'
             value={props.value}

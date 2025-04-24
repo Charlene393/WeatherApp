@@ -4,7 +4,7 @@ import { cn } from '@/utils/cn'
 
 type Props = {}
 
-export default function WeatherIcon (props: React.HTMLProps<HTMLDivElement> & {iconName: string}) {
+export default function WeatherIcon (props: React.HTMLProps<HTMLDivElement> & {iconname: string}) {
     return (
         <div 
         {...props}
@@ -14,7 +14,7 @@ export default function WeatherIcon (props: React.HTMLProps<HTMLDivElement> & {i
             height={100}
             alt='Weather Icon'
             className='absolute h-full w-full'
-            src ={'https://openweathermap.org/img/wn/${props.iconName}@4x.png'}/>
+            src ={`https://openweathermap.org/img/wn/${props.iconname}@4x.png`}/>
         </div>
     )
 }

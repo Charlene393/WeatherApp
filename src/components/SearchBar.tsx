@@ -4,9 +4,9 @@ import { IoSearchSharp } from "react-icons/io5";
 
 type Props = {
     className?: string,
-    value: string,
-    onChange: React.ChangeEventHandler<HTMLInputElement>,
-    onSubmit: React.FormEventHandler<HTMLFormElement>,
+    value?: string,
+    onChange?: React.ChangeEventHandler<HTMLInputElement>,
+    onSubmit?: React.FormEventHandler<HTMLFormElement>,
 }
 
 export default function SearchBar(props: Props) {

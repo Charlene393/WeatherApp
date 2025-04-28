@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import WeatherDetails from "@/components/WeatherDeatils";
 import WeatherIcon from "@/components/WeatherIcon";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
+import { convertWindSpeed } from "@/utils/convertWindspeed";
 import { getDayOrNightIcon } from "@/utils/getDayOrNightIcon";
 import { meterToKilometer } from "@/utils/meterToKilometer";
 import { useQuery } from "@tanstack/react-query";
@@ -180,7 +181,7 @@ export default function Home() {
             visibility={meterToKilometer(firstData?.visibility ?? 10000)}
             airPressure={`${firstData?.main.pressure} hPa`}
             humidity={`${firstData?.main.humidity} %`}
-            windSpeed={`${firstData?.wind.speed} m/s`}
+            windSpeed={convertWindSpeed(firstData?.wind.speed ?? 1.64)}
             sunrise={format(fromUnixTime(data?.city.sunrise ?? 1702949452 ), "H:mm")}
             sunset={format(fromUnixTime(data?.city.sunset ?? 1702982652), "H:mm")}
             />
